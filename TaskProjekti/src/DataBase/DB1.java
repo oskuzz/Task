@@ -18,16 +18,12 @@ import java.sql.Statement;
 public class DB1 {
     
     private Connection conn;
-    public DB1(String urlToDataBase) throws ClassNotFoundException, SQLException {
+    public DB1() throws ClassNotFoundException, SQLException {
 
         String driver = "net.ucanaccess.jdbc.UcanaccessDriver";
         Class.forName(driver);
         conn = DriverManager.getConnection("jdbc:ucanaccess://Task.accdb");
         System.out.println("Connected");
-    }
-
-    public DB1() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public ResultSet query(String SQL) throws SQLException {
